@@ -1,4 +1,8 @@
-import { Component, OnInit } from '@angular/core';
+import {Component, OnInit} from '@angular/core';
+import {ActivatedRoute, Router} from "@angular/router";
+
+import {UserService} from "../../services";
+import {IUser} from "../../interfaces";
 
 @Component({
   selector: 'app-user-details',
@@ -6,10 +10,23 @@ import { Component, OnInit } from '@angular/core';
   styleUrls: ['./user-details.component.css']
 })
 export class UserDetailsComponent implements OnInit {
+  user: IUser
 
-  constructor() { }
+  constructor(private activatedRoute: ActivatedRoute,
+              private router: Router,
+              private userService: UserService) {
+  }
 
   ngOnInit(): void {
+    this.activatedRoute.params.subscribe(({id}) => {
+      const {state: {user}} = history;
+
+      if (user) {
+        this.user = user
+      } else {
+        this.userService.getById(id).subscribe(value => this.user = value)
+      }
+    })
   }
 
 }
