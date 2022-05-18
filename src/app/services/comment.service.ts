@@ -1,6 +1,7 @@
 import {Injectable} from '@angular/core';
 import {HttpClient} from "@angular/common/http";
 import {Observable} from "rxjs";
+
 import {IComment} from "../interfaces";
 import {urls} from "../constants";
 
@@ -16,7 +17,7 @@ export class CommentService {
     return this.httpClient.get<IComment[]>(urls.comments)
   }
 
-  gerById(id: string): Observable<IComment> {
+  getById(id: string): Observable<IComment> {
     return this.httpClient.get<IComment>(`${urls.comments}/${id}`)
   }
 }
