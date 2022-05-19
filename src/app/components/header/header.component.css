@@ -1,0 +1,17 @@
+.container {
+  display: flex;
+  justify-content: space-around;
+  align-items: center;
+  height: 50px;
+  background: coral;
+}
+
+a {
+  font-size: 28px;
+  text-decoration: none;
+  color: snow;
+}
+
+.active a {
+  color: #1976d2;
+}
