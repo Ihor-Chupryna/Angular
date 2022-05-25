@@ -1,0 +1,5 @@
+.comments-container {
+  height: 65vh;
+  overflow-y: scroll;
+  padding: 5px;
+}
