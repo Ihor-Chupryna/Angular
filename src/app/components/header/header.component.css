@@ -1,0 +1,14 @@
+.container {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  height: 60px;
+  background: coral;
+  gap: 30px;
+}
+
+a {
+  text-decoration: none;
+  color: #cfd7cf;
+  font-size: 25px;
+}
