@@ -1,4 +1,7 @@
-import { Component } from '@angular/core';
+import {Component} from '@angular/core'
+  ;
+import {IUser} from "./interfaces";
+
 
 @Component({
   selector: 'app-root',
@@ -6,5 +9,10 @@ import { Component } from '@angular/core';
   styleUrls: ['./app.component.css']
 })
 export class AppComponent {
-  title = 'Angular';
+  user: IUser
+
+  catchUser($event: IUser) {
+    console.log('app')
+    this.user = $event
+  }
 }
